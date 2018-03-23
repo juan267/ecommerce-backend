@@ -1,6 +1,10 @@
 {
   "name": "click2dress",
   "private": true,
+  "engines": {
+    "node": "9.9.0",
+    "yarn": "1.5.1"
+  },
   "dependencies": {
     "@rails/webpacker": "^3.3.1",
     "vue": "^2.5.16",
