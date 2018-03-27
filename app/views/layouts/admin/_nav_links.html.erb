@@ -1,0 +1,14 @@
+<nav class="nav-links">
+  <% BackendConfiguration::MenuItem.menu_items.each do |item| %>
+    <div class="nav-item<%= @active_item == item.name ? " active" : nil %>">
+      <a href="<%= item.url %>" class="nav-link"><%= item.label %></a>
+      <ul class="nav sidenav">
+        <% item.sections.each do |section| %>
+          <li class="<%= @active_item == section ? "active" : nil %>">
+            <a href=""><%= section %></a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</nav>

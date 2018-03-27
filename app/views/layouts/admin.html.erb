@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <%= render 'layouts/head' do %>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta name="turbolinks-cache-control" content="no-cache">
+  <% end %>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row admin-dashboard">
+        <%= render 'layouts/admin/sidebar' %>
+        <%= render 'layouts/admin/main' %>
+      </div>      
+    </div>
+  </body>
+</html>
+  
