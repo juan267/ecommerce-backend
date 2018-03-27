@@ -2,6 +2,6 @@
 
 module ApplicationHelper
   def store_name
-    "Click2Dress"
+    "ecommerce_backend"
   end
 end
