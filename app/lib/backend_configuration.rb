@@ -4,7 +4,6 @@ module BackendConfiguration
   PRODUCT_TABS       ||= [:products, :custom_attributes, :properties,
                           :variants, :product_properties, :taxonomies,
                           :taxons]
-  REPORT_TABS        ||= [:reports]
   CONFIGURATION_TABS ||= [:stores, :tax_categories,
                           :tax_rates, :zones,
                           :payment_methods, :shipping_methods,
@@ -59,6 +58,54 @@ module BackendConfiguration
           url: :admin_stock_items_path
         ),
         MenuItem.new(
+          :users,
+          USER_TABS,
+          "user",
+          url: :admin_users_path
+        )
+      ]
+    end
+  end
+
+  class SectionItem
+    def initialize(label, url)
+      @label = label
+      @url = url
+    end
+
+    def self.menu_items
+      @menu_items ||= [
+        SectionItem.new(
+          :orders,
+          admin_orders_path
+        ),
+        SectionItem.new(
+          :products,
+          PRODUCT_TABS,
+          "th-large",
+          url: :admin_products_path,
+        ),
+        SectionItem.new(
+          :settings,
+          CONFIGURATION_TABS,
+          "wrench",
+          label: :settings,
+          url: :admin_stores_path
+        ),
+        SectionItem.new(
+          :promotions,
+          PROMOTION_TABS,
+          "bullhorn",
+          url: :admin_promotions_path
+        ),
+        SectionItem.new(
+          :stock,
+          STOCK_TABS,
+          "cubes",
+          label: :stock,
+          url: :admin_stock_items_path
+        ),
+        SectionItem.new(
           :users,
           USER_TABS,
           "user",
